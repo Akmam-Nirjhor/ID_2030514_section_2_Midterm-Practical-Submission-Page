@@ -393,3 +393,143 @@ body.dark .course {
         text-align: left;
     }
 }
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatShape {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(24px) scale(1.08);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 6px 14px rgba(47, 128, 237, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 26px rgba(47, 128, 237, 0.85);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header: moving gradient, floating shapes, title slides in */
+header {
+    background-size: 200% 200%;
+    animation: gradientMove 10s ease infinite;
+}
+
+header::before {
+    animation: floatShape 7s ease-in-out infinite;
+}
+
+header::after {
+    animation: floatShape 9s ease-in-out infinite reverse;
+}
+
+header h1 {
+    animation: slideDown 0.9s ease-out both;
+}
+
+header p {
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Navbar slides down on load */
+nav {
+    animation: slideDown 0.7s ease-out both;
+}
+
+/* Page content fades in one by one */
+main h2 {
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+main > p {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+main > img {
+    animation: fadeInUp 0.9s ease-out 0.35s both;
+}
+
+.feature,
+.course {
+    animation: popIn 0.7s ease-out both;
+}
+
+.feature:nth-child(1), .course:nth-child(1) { animation-delay: 0.1s; }
+.feature:nth-child(2), .course:nth-child(2) { animation-delay: 0.25s; }
+.feature:nth-child(3), .course:nth-child(3) { animation-delay: 0.4s; }
+.course:nth-child(4) { animation-delay: 0.55s; }
+.course:nth-child(5) { animation-delay: 0.7s; }
+.course:nth-child(6) { animation-delay: 0.85s; }
+
+/* Button gently pulses to attract attention */
+.btn {
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.btn:hover {
+    animation: none;
+}
+
+/* Message box pops in when shown by JavaScript */
+.message {
+    animation: popIn 0.4s ease-out;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
