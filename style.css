@@ -230,3 +230,166 @@ body.dark .feature, body.dark .course {
 body.dark .feature h3, body.dark .course h3 {
     color: #ffffff;
 }
+
+/* ===== Professional polish ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: #ffd54f;
+    color: #1f2a44;
+}
+
+body {
+    background: linear-gradient(180deg, #eef3fb 0%, #f9fbff 100%);
+    background-attachment: fixed;
+}
+
+/* Header: richer look with decorative glow and underline accent */
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 56px 20px 60px;
+    background: linear-gradient(135deg, #2f80ed 0%, #1f2a44 70%);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -60px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255, 213, 79, 0.18);
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -60px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+header h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+header h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 2px;
+    background-color: #ffd54f;
+}
+
+header p {
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Headings */
+main h2 {
+    font-size: 1.9rem;
+    margin-top: 40px;
+}
+
+/* Images: zoom on hover */
+main img {
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+main img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Cards: top accent and stronger hover */
+.feature,
+.course {
+    border: 1px solid #e3e9f4;
+}
+
+.feature:hover,
+.course:hover {
+    box-shadow: 0 12px 24px rgba(47, 128, 237, 0.25);
+}
+
+.course {
+    border-top: 4px solid #ffd54f;
+}
+
+.price {
+    background: linear-gradient(135deg, #1b7f4b, #27ae60);
+    font-size: 1.05rem;
+}
+
+/* Buttons: gradient, shadow and press effect */
+.btn {
+    background: linear-gradient(135deg, #2f80ed, #1f5fbf);
+    box-shadow: 0 6px 14px rgba(47, 128, 237, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #ffb300, #ff8f00);
+    box-shadow: 0 8px 18px rgba(255, 143, 0, 0.45);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Footer: accent line on top */
+footer {
+    border-top: 4px solid #ffd54f;
+    padding: 32px 20px;
+}
+
+/* Dark mode support for new elements */
+body.dark {
+    background: #12161f;
+}
+
+body.dark .feature,
+body.dark .course {
+    border-color: #2a3247;
+}
+
+/* Responsive: mobile screens */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 12px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    main {
+        padding: 24px 16px;
+    }
+
+    main p {
+        text-align: left;
+    }
+}
