@@ -117,3 +117,43 @@ main img {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Buttons */
+.btn {
+    display: block;
+    margin: 24px auto 10px;
+    padding: 12px 30px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #2f80ed;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #1f5fbf;
+    transform: scale(1.05);
+}
+
+.message {
+    display: none;
+    text-align: center !important;
+    font-weight: bold;
+    color: #1b7f4b;
+    background-color: #e3f6ec;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Dark mode */
+body.dark {
+    background-color: #12161f;
+    color: #e6e9ef;
+}
+
+body.dark main h2 {
+    color: #ffffff;
+}
