@@ -157,3 +157,76 @@ body.dark {
 body.dark main h2 {
     color: #ffffff;
 }
+
+/* Home page: flexbox feature cards */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0 30px;
+}
+
+.feature {
+    flex: 1 1 250px;
+    background-color: #ffffff;
+    border-top: 4px solid #2f80ed;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-6px);
+}
+
+/* Products page: grid course cards */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin: 20px 0 30px;
+}
+
+.course {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.price {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 14px;
+    color: #ffffff;
+    background-color: #1b7f4b;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.feature h3, .course h3 {
+    margin-top: 0;
+    color: #1f2a44;
+}
+
+.feature p, .course p {
+    text-align: center;
+}
+
+body.dark .feature, body.dark .course {
+    background-color: #1c2230;
+}
+
+body.dark .feature h3, body.dark .course h3 {
+    color: #ffffff;
+}
